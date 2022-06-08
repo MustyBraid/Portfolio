@@ -1,0 +1,128 @@
+body {
+    background-color: black;
+    color: white;
+    /* This establishes the backbone of a dark theme */
+}
+
+::selection {
+    background: rgba(0, 255, 255, 0.767);
+    color: black;
+}
+
+header {
+    padding: 2%;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: larger;
+    font-weight: bold;
+}
+
+h2 {
+    background-color: rgba(0, 0, 255, 0.507);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+nav {
+    /* a very basic list for some in-page links */
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+nav a {
+    margin: 20px;
+    color: white;
+}
+
+aside {
+    margin-bottom: 40px;
+}
+
+aside ul{
+    /* This ensures the header's text will be next to my lovely photo, and keeps the two of them from overlapping or fighting for space
+    as the screen is narrowed or widened */
+    columns: 2;
+    display: flex;
+    flex-flow: row;
+    align-content: stretch;
+    align-items: center;
+}
+
+aside img{
+    height: 210px;
+    width: 170px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+aside p{
+    justify-content: left;
+}
+
+main {
+    /* This is the largest flexbox-construct by far, which moves around my figures and all that's attached to them as the page is resized */
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+figure {
+    margin-top: 10px;
+}
+
+.large-project img{
+    /* This class (and its sister .small-project) set the sizes of each image, give it a border, and desaturate it for our mouseover 
+    effect */
+    width: 700px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    filter: saturate(30%);
+    transition: 1.5s;
+}
+
+.large-project img:hover{
+    /* resaturates the desaturated images, completing the mouseover effect */
+    filter: saturate(80%);
+}
+
+.small-project img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 350px;
+    filter: saturate(30%);
+    transition: 1.5s;
+}
+
+.small-project img:hover{
+    filter:saturate(90%)
+}
+
+figcaption {
+    /* The strange positioning on these forces them to overlay on top of the images, making a nice stacked card effect. Could be polished 
+    if I wasn't rushing so much */
+    background-color: rgba(255, 0, 255, 0.351);
+    padding: .5em;
+    margin: 20px; 
+    width: 20em;
+    position: relative;
+    top: -13em;
+}
+
+footer ul {
+    columns: 3;
+}
+
+footer ul li {
+    margin: 30px;
+}
